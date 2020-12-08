@@ -20,7 +20,6 @@ void AudioCh0Init(void)
 	HAL_ADC_Start_DMA(AUDIO_0_2_ADC, (uint32_t* )&audio_buf_0_2_in , AUDIOBUF_LEN);
 	HAL_DAC_Start_DMA(AUDIO_0_DAC, OUTCHANNEL_0, (uint32_t* )&audio_buf_0_out, NUMBER_OF_AUDIO_SAMPLES, DAC_ALIGN_12B_R);
 	HAL_OPAMP_Start(&hopamp1);
-	HAL_LPTIM_Counter_Start_IT(AUDIO_0_2_LOOP_TIMER,KHZ176400);
 }
 
 #ifdef DUAL
@@ -31,7 +30,6 @@ void AudioCh1Init(void)
 	HAL_ADC_Start_DMA(AUDIO_1_3_ADC, (uint32_t* )&audio_buf_1_3_in , AUDIOBUF_LEN);
 	HAL_DAC_Start_DMA(AUDIO_1_DAC, OUTCHANNEL_1, (uint32_t* )&audio_buf_1_out, NUMBER_OF_AUDIO_SAMPLES, DAC_ALIGN_12B_R);
 	HAL_OPAMP_Start(&hopamp2);
-	HAL_LPTIM_Counter_Start_IT(AUDIO_1_3_LOOP_TIMER,AUDIO_LOOP_44KHZ);
 }
 #endif
 void AudioInit(void)
@@ -42,4 +40,5 @@ void AudioInit(void)
 	#ifdef DUAL
 	AudioCh1Init();
 	#endif
+	audio_timer_start();
 }

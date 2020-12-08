@@ -19,7 +19,7 @@ __attribute__ ((aligned (4))) uint16_t		audio_buf_1_out[NUMBER_OF_AUDIO_SAMPLES]
 
 uint8_t	half_in=0 , audioin_buffer_ready=0, mdma_end_flag , mdma_count;
 
-#define	USE_MDMA_OUT
+//#define	USE_MDMA_OUT
 //#define	USE_MDMA_IN
 
 #ifdef	USE_MDMA_IN

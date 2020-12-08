@@ -14,5 +14,5 @@ void ControlInit(void)
 {
 	HAL_ADCEx_Calibration_Start(CONTROL_ADC, ADC_CALIB_OFFSET, ADC_SINGLE_ENDED);
 	HAL_ADC_Start_DMA(CONTROL_ADC, (uint32_t* )&control_buf , CONTROLBUF_LEN);
-	HAL_LPTIM_Counter_Start_IT(CONTROL_LOOP_TIMER,3125);
+	control_timer_start();
 }

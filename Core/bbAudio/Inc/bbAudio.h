@@ -8,11 +8,8 @@
 #ifndef BBAUDIO_INC_BBAUDIO_H_
 #define BBAUDIO_INC_BBAUDIO_H_
 
-/* Controls */
-extern	LPTIM_HandleTypeDef hlptim3;
-/* Audio timers */
-extern	LPTIM_HandleTypeDef hlptim1;
-extern	LPTIM_HandleTypeDef hlptim2;
+#include "port.h"
+
 
 #define	INCHANNEL_0		0
 #define	INCHANNEL_1		1
@@ -20,16 +17,7 @@ extern	LPTIM_HandleTypeDef hlptim2;
 #define	OUTCHANNEL_1	1
 #define	CHANNEL_0		OUTCHANNEL_0
 #define	CHANNEL_1		OUTCHANNEL_1
-#define	AUDIO_0_2_LOOP_TIMER	&hlptim1
-#define	AUDIO_1_3_LOOP_TIMER	&hlptim2
-#define	CONTROL_LOOP_TIMER		&hlptim3
-#define	AUDIO_LOOP_88KHZ	5
-#define	AUDIO_LOOP_44KHZ	10
-#define	KHZ352800			499
-#define	KHZ176400			997
-#define	KHZ88200			1994
-#define	KHZ44100			3989
-#define	KHZ22050			7980
+
 
 /* Audio channels */
 extern	ADC_HandleTypeDef hadc1;

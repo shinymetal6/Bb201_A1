@@ -6,7 +6,6 @@
  */
 
 #include "main.h"
-
 void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef *hadc)
 {
 	if (( hadc == AUDIO_0_2_ADC) ||( hadc == AUDIO_1_3_ADC))
